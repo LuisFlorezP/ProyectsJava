@@ -4,7 +4,7 @@ public class Supermercado {
     public static void main(String[] args) {
         // Definir variables
         String cliente="", cedula="", opcion="";
-        int propina=0, puntos=0, cF=0, cL=0, cV=0, finFrutas=0, finLacteos=0, finVerduras=0, fin1=0, fin2=0;
+        int propina=0, puntos=0, cF=0, cL=0, cV=0, fin1=0, fin2=0;
         int c1=0, c2=0, c3=0, c4=0, c5=0, c6=0, c7=0, c8=0, c9=0;
         double subtotal=0, factura=0, impuestoIVA=0, valorPro=0, iva=0.19, empleados=0;
         double p1=4000, p2=3000, p3=60000, p4=5000, p5=10000, p6=2000, p7=2500, p8=3000, p9=2000, t1=0, t2=0, t3=0, t4=0, t5=0, t6=0, t7=0, t8=0, t9=0;
