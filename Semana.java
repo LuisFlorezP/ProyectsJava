@@ -46,7 +46,7 @@ public class Semana {
                     do {
                         // Pedir nota 1
                         n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°1 del 25%: ","✪✪✪PROGRAMA NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-                        if (n1>0&&n1<=5) {
+                        if (n1>=0&&n1<=5) {
                             n1=n1*p1;  
                             r=0;
                         } 
@@ -60,7 +60,7 @@ public class Semana {
                     do {
                         // Pedir nota 2
                         n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°2 del 25%: ","✪✪✪PROGRAMA NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-                        if (n2>0&&n2<=5) {
+                        if (n2>=0&&n2<=5) {
                             n2=n2*p1; 
                             r=0;
                         } 
@@ -74,7 +74,7 @@ public class Semana {
                     do {
                         // Pedir nota 3
                         n3=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°3 del 20%: ","✪✪✪PROGRAMA NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-                        if (n3>0&&n3<=5) {
+                        if (n3>=0&&n3<=5) {
                             n3=n3*p2;  
                             r=0;
                         } 
@@ -88,7 +88,7 @@ public class Semana {
                     do {
                         // Pedir nota 4
                         n4=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°4 del 30%: ","✪✪✪PROGRAMA NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-                        if (n4>0&&n4<=5) {
+                        if (n4>=0&&n4<=5) {
                             n4=n4*p3;    
                             r=0;
                         } 
