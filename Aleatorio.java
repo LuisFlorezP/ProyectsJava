@@ -141,7 +141,7 @@ public class Aleatorio {
             JOptionPane.showMessageDialog(null,"   - Nombre ganador: "+nomGanador+".\n   - Documento ganador: "+docGanador+".\n   - Premio: "+premio+".\n   - Número de la rifa: "+numeroA+".","☸☸☸GANADOR☸☸☸",JOptionPane.INFORMATION_MESSAGE);
         }
         else if (finRifa==3) {
-
+            JOptionPane.showMessageDialog(null,"FIN DE LA RIFA","☸☸☸FIN ADIVINAR NÚMERO☸☸☸",JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
