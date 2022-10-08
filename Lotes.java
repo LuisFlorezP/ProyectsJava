@@ -4,13 +4,15 @@ public class Lotes {
     public static void main(String args[]) {
         int limite=0, limUsuario=0, numero=-1, lote=1, cont=0;
     
+        JOptionPane.showMessageDialog(null,"☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬\nBIENVENIDO AL PROGRAMA DE LOTES IMPARES\n☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬☬","LUCHINI S.A.S",JOptionPane.INFORMATION_MESSAGE);
+
         do {
-            limUsuario=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar un límite para la secuencia (debe ser igual o mayor a 50):","INGRESAR LÍMITE",JOptionPane.QUESTION_MESSAGE));
+            limUsuario=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar un límite para la secuencia (debe ser igual o mayor a 50):","☬☬☬INGRESAR LÍMITE☬☬☬",JOptionPane.QUESTION_MESSAGE));
             if (limUsuario>=50) {
                 limite=limUsuario;
             }
             else {
-                JOptionPane.showMessageDialog(null,"Digitó un número erróneo, vuelva a intentarlo.","ERROR",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Digitó un número erróneo, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
             }   
         } while (limUsuario<50);
         
@@ -24,8 +26,8 @@ public class Lotes {
             }
             System.out.print(numero+", ");
         }
+        
         System.out.println("\nLote "+lote+".");
         System.out.println("\n\nFIN DEL PROCESO.\n");
-        
     }
 }
