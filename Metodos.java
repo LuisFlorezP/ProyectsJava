@@ -1,6 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class Metodos {
+    static int numero=0, limite=0;
     public static void main(String args[]) {
         int opcion=0;
         JOptionPane.showMessageDialog(null,"♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨\nBIENVENIDO AL PROGRAMA SECUENCIAS\n♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨","LUCHINI S.A.S",JOptionPane.INFORMATION_MESSAGE);
@@ -21,14 +22,23 @@ public class Metodos {
                     secuencia4();
                     break;
                 case 5:
-                    JOptionPane.showMessageDialog(null,"Saliendo del programa","♨♨♨PROGRAMA SECUENCIAS♨♨♨",JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null,"Saliendo del programa","♨♨♨PROGRAMA SECUENCIAS♨♨♨",JOptionPane.WARNING_MESSAGE);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.OK_OPTION);
                     break;
             }   
         } while (opcion!=5);
     }
     public static void secuencia1() {
-
-    }
+        limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar el límite para la secuencia par:","♨♨♨SECUENCIA N°1♨♨♨",JOptionPane.QUESTION_MESSAGE));
+        System.out.println("\nSecuencia N°1: ");
+        while (numero<limite-1) {
+            numero+=2;
+            System.out.print(numero+" ");
+        }
+        numero=0;
+    }   
     public static void secuencia2() {
 
     }
