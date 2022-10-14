@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class Metodos {
-    static int numero=0, limite=0;
+    static int numero=0, numero2=0, limite=0, cont=0;
     public static void main(String args[]) {
         int opcion=0;
         JOptionPane.showMessageDialog(null,"♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨\nBIENVENIDO AL PROGRAMA SECUENCIAS\n♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨♨","LUCHINI S.A.S",JOptionPane.INFORMATION_MESSAGE);
@@ -22,7 +22,7 @@ public class Metodos {
                     secuencia4();
                     break;
                 case 5:
-                    JOptionPane.showMessageDialog(null,"Saliendo del programa","♨♨♨PROGRAMA SECUENCIAS♨♨♨",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Saliendo del programa...","♨♨♨PROGRAMA SECUENCIAS♨♨♨",JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.OK_OPTION);
@@ -30,6 +30,7 @@ public class Metodos {
             }   
         } while (opcion!=5);
     }
+
     public static void secuencia1() {
         limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar el límite para la secuencia par:","♨♨♨SECUENCIA N°1♨♨♨",JOptionPane.QUESTION_MESSAGE));
         System.out.println("\nSecuencia N°1: ");
@@ -37,15 +38,43 @@ public class Metodos {
             numero+=2;
             System.out.print(numero+" ");
         }
+        System.out.println();
         numero=0;
     }   
-    public static void secuencia2() {
 
+    public static void secuencia2() {
+        limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar el límite para la secuencia impar:","♨♨♨SECUENCIA N°2♨♨♨",JOptionPane.QUESTION_MESSAGE));
+        System.out.println("\nSecuencia N°2: ");
+        numero=-1;
+        while (numero<limite-1) {
+            numero+=2;
+            System.out.print(numero+" ");
+        }
+        System.out.println();
+        numero=0;
     }
+
     public static void secuencia3() {
-        
+        limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar la cantidad de numeros a imprimir para la secuencia incremento y decrememento:","♨♨♨SECUENCIA N°3♨♨♨",JOptionPane.QUESTION_MESSAGE));
+        System.out.println("\nSecuencia N°3: ");
+        numero2=100;
+        while (cont<limite) {
+            ++numero;
+            --numero2;
+            ++cont;
+            System.out.print(numero+" "+numero2+" ");
+        }
+        System.out.println();
+        numero=0; numero2=100; cont=0;
     }
+
     public static void secuencia4() {
-        
+        limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar el límite para la secuencia de la suma con el anterior:","♨♨♨SECUENCIA N°4♨♨♨",JOptionPane.QUESTION_MESSAGE));
+        System.out.println("\nSecuencia N°4: ");
+        for (numero=1;numero<limite;cont++) {
+            numero+=numero2;
+            numero2=numero;
+            System.out.print(numero+" ");
+        }
     }
 }
