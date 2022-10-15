@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class recuperacion {
+public class Banco {
     // Definir variables globales
     static Scanner sc = new Scanner(System.in);
     static String nombre, tipoDoc, tipoCuenta;
