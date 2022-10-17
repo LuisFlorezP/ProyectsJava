@@ -23,6 +23,7 @@ public class Metodos {
                     break;
                 case 5:
                     JOptionPane.showMessageDialog(null,"Saliendo del programa...","♨♨♨PROGRAMA SECUENCIAS♨♨♨",JOptionPane.WARNING_MESSAGE);
+                    System.out.println();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.OK_OPTION);
@@ -71,10 +72,14 @@ public class Metodos {
     public static void secuencia4() {
         limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar el límite para la secuencia de la suma con el anterior:","♨♨♨SECUENCIA N°4♨♨♨",JOptionPane.QUESTION_MESSAGE));
         System.out.println("\nSecuencia N°4: ");
-        for (numero=1;numero<limite;cont++) {
-            numero+=numero2;
-            numero2=numero;
+        cont=1;
+        while (numero<=limite) {
             System.out.print(numero+" ");
+            numero+=cont;
+            cont=numero2;
+            numero2=numero;
         }
+        System.out.println();
+        numero=0; numero2=0; cont=0;
     }
 }
