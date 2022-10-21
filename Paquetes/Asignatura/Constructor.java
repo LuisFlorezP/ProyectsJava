@@ -12,9 +12,9 @@ public class Constructor {
         
         System.out.print("\nIngresar código de la asignatura: ");
         codigoA2=sc.nextLine();
-        System.out.print("Ingresar código de la asignatura: ");
+        System.out.print("Ingresar nombre asignatura: ");
         nomAsig2=sc.next();
-        System.out.print("Ingresar código de la asignatura: ");
+        System.out.print("Ingresar nombre programa: ");
         nomProg2=sc.next();
 
         Matricula materia = new Matricula(codigoA2,nomAsig2,nomProg2);
