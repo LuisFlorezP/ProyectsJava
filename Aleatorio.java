@@ -115,11 +115,14 @@ public class Aleatorio {
                     break;
             }
         }
+        // Ir al metodo de resultado de la rifa
         Resultado();
     }
 
     public static void Persona1() {
+        // Pedir nombre
         nombre=JOptionPane.showInputDialog(null,"Ingresar nombre completo:","☸☸☸FIN ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
+        // Pedir documento
         documento=JOptionPane.showInputDialog(null,"Ingresar número de documento de identidad:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
         for (cont=1;cont<=3;cont++) {
             eleccion=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar número entero del 1 al 10:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE));
@@ -136,7 +139,9 @@ public class Aleatorio {
     }
 
     public static void Persona2() {
+        // Pedir nombre
         nombre=JOptionPane.showInputDialog(null,"Ingresar nombre completo:","☸☸☸FIN ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
+        // Pedir documento
         documento=JOptionPane.showInputDialog(null,"Ingresar número de documento de identidad:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
         for (cont=1;cont<=3;cont++) {
             eleccion=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar número entero del 1 al 10:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE));
@@ -153,7 +158,9 @@ public class Aleatorio {
     }
 
     public static void Persona3() {
+        // Pedir nombre
         nombre=JOptionPane.showInputDialog(null,"Ingresar nombre completo:","☸☸☸FIN ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
+        // Pedir documento
         documento=JOptionPane.showInputDialog(null,"Ingresar número de documento de identidad:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE);
         for (cont=1;cont<=3;cont++) {
             eleccion=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar número entero del 1 al 10:","☸☸☸ADIVINAR NÚMERO☸☸☸",JOptionPane.QUESTION_MESSAGE));
