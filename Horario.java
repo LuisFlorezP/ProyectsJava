@@ -1,4 +1,4 @@
-public class Reuniones {
+public class Horario {
     enum semana{Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo}
     
     public static void main(String args[]) {
