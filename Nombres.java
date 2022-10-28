@@ -50,6 +50,7 @@ public class Nombres{
                         todo+="\""+arreglo+"\" ";
                     }
                     JOptionPane.showMessageDialog(null,"Datos: "+todo,"⌘⌘⌘MOSTRAR TODOS LOS DATOS⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
+                    todo="";
                     break;
                 case 4: 
                     existencia=pedir();
@@ -59,12 +60,13 @@ public class Nombres{
                             verif++;
                         }   
                     }
-                    if (verif==espacio) {
+                    if (verif!=espacio) {
                         info=true;
                     }
                     else {
                         info=false;
                     }
+                    verif=0;
                     resul(info);
                     break;
                 case 5: break;
