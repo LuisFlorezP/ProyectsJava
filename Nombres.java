@@ -29,7 +29,8 @@ public class Nombres{
     static void menu(int espacio) {
         String nombres[]=new String[espacio];
         String nombre, todo="", existencia;
-        int ubic, valor=espacio;
+        int ubic, valor=espacio, verif=0;
+        boolean info;
 
         do {
             menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Ingresar nombre.\n   - Opción 2: Ver nombre.\n   - Opción 3: Ver todos los nombres.\n   - Opción 4: Buscar nombre.\n   - Opción 5: Menú anterior.","⌘⌘⌘ALMACENAMIENTO⌘⌘⌘",JOptionPane.QUESTION_MESSAGE));
@@ -51,13 +52,20 @@ public class Nombres{
                     JOptionPane.showMessageDialog(null,"Datos: "+todo,"⌘⌘⌘MOSTRAR TODOS LOS DATOS⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 4: 
-                    existencia=buscar();
-                    if (existencia.equals(nombres[0])) {
-                        JOptionPane.showMessageDialog(null,"El nombre que busca si se encuentra almacenado.","⌘⌘⌘BUSCAR DATO⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
+                    existencia=pedir();
+                    for (int cont=0;cont<nombres.length;cont++) {
+                        if (nombres[cont].equals(existencia)) {}
+                        else {
+                            verif++;
+                        }   
+                    }
+                    if (verif==espacio) {
+                        info=true;
                     }
                     else {
-                        JOptionPane.showMessageDialog(null,"El nombre que busca no se encuentra almacenado.","⌘⌘⌘BUSCAR DATO⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
+                        info=false;
                     }
+                    resul(info);
                     break;
                 case 5: break;
                 default:
@@ -92,10 +100,19 @@ public class Nombres{
         JOptionPane.showMessageDialog(null,"Nombre almacenado en la posición "+numero+": "+dato+".","⌘⌘⌘MOSTRAR DATO⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
     }
 
-    static String buscar() {
-        String valor;
+    static String pedir() {
+        String nombre;
 
-        valor=JOptionPane.showInputDialog(null,"Ingresar el nombre que desea buscar en el almacenamiento: ");
-        return (valor);
+        nombre=JOptionPane.showInputDialog(null,"Ingresar el nombre que desea buscar en el almacenamiento: ");
+        return (nombre);
+    }
+
+    static void resul(boolean valor) {
+        if (valor) {
+            JOptionPane.showMessageDialog(null,"El nombre que busca si se encuentra almacenado.","⌘⌘⌘BUSCAR DATO⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"El nombre que busca no se encuentra almacenado.","⌘⌘⌘BUSCAR DATO⌘⌘⌘",JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 }
