@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 public class Plan_3 {
     public static void main(String[] args){
-        String nombre, carro="Carro", moto="Moto", N="No aplica", vh="" ,cat="", categoria, personas, vehiculo;
+        String nombre, carro="Carro", moto="Moto", N="No aplica", vh="" ,cat="", categoria, personas, vehiculo, facturaM;
         double iva=1.19, factura=0, factura2=0; 
         int vcarro=11000, vmoto=6000, vh2=0;
         
@@ -79,10 +79,8 @@ public class Plan_3 {
         }
         
         factura2=factura*iva;
-                    
-        JOptionPane.showMessageDialog(null,"\nNombre del usuario: "+nombre+" ("+cat+")");
-        JOptionPane.showMessageDialog(null,"Cantidad de personas incluidas en el plan: "+personas);
-        JOptionPane.showMessageDialog(null,"Valor total factura sin IVA: $"+factura);
-        JOptionPane.showMessageDialog(null,"Valor total factura con IVA: $"+factura2+"\n");
+        
+        facturaM="Nombre del usuario: "+nombre+". ("+cat+")\nCantidad de personas incluidas en el plan: "+personas+".\nValor total factura sin IVA: $"+factura+".\nValor total factura con IVA: $"+factura2+".";
+        JOptionPane.showMessageDialog(null,facturaM,"PLAN FAMILIAR",JOptionPane.INFORMATION_MESSAGE);
     }
 }
