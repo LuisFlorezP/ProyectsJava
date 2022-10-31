@@ -9,7 +9,7 @@ public class Plan_4 {
         
         
         do {
-            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Facturación.\n   - Opción 2: Cerrar sistema.","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
+            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Facturación.\n   - Opción 2: Ventas.\n   - Opción 3: Cerrar sistema.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
             switch (menu) {
                 case 1:
                     nombre=JOptionPane.showInputDialog(null,"Ingresar nombre completo: ","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE);
@@ -20,12 +20,15 @@ public class Plan_4 {
                     valorV=valorV(vehiculo);
                     factura=facturacion(nombre,documento,categoria,personas,vehiculo,valorV);
                     JOptionPane.showMessageDialog(null,factura,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE); break;
-                case 2: 
+                case 2:
+                    ventas();
+                    break;
+                case 3: 
                     JOptionPane.showMessageDialog(null,"Saliendo del sistema...","LUCHINI S.A.S",JOptionPane.WARNING_MESSAGE); break;
                 default: 
                     JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE); break;
             }
-        } while (menu!=2);
+        } while (menu!=3);
     }
 
     static String categoria() {
@@ -140,5 +143,24 @@ public class Plan_4 {
         
         mensaje="DATOS DE LA FACTURA.\n   - Nombre cliente: "+nom+". ("+cat+")\n   - Documento de identidad: "+doc+".\n   - Personas para el plan: "+per+".\n   - Vehículo: "+veh+"\n   - Total a pagar sin IVA: "+factura+".\n   - Total a pagar con IVA: "+facturaIva+".";
         return (mensaje);
+    }
+
+    static void ventas() {
+        int menu;
+
+        do {
+            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Máximas ventas de cada sede.\n   - Opción 2: Mínimas ventas de cada sede.\n   - Opción 3: Recaudo total de cada sede.\n   - Opción 4: Recaudo total por día de cada sede.\n   - Opción 5: Similitud de ventas por día de cada sede.\n   - Opción 6: Totalidad de ventas.\n   - Opción 7: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
+            switch (menu) {
+                case 1: break;
+                case 2: break;
+                case 3: break;
+                case 4: break;
+                case 5: break;
+                case 6: break;
+                case 7: break;
+                default: 
+                JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE); break;
+            }
+        } while (menu!=7);
     }
 }
