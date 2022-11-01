@@ -149,20 +149,19 @@ public class Plan_4 {
         int menu;
         double sd1L=Math.round(Math.random()*60), sd1M=Math.round(Math.random()*60), sd1MM=Math.round(Math.random()*60), sd1J=Math.round(Math.random()*60), sd1V=Math.round(Math.random()*60), sd1S=Math.round(Math.random()*60), sd1D=Math.round(Math.random()*60);
         double sd2L=Math.round(Math.random()*60), sd2M=Math.round(Math.random()*60), sd2MM=Math.round(Math.random()*60), sd2J=Math.round(Math.random()*60), sd2V=Math.round(Math.random()*60), sd2S=Math.round(Math.random()*60), sd2D=Math.round(Math.random()*60);
-        double sede1[]={sd1L,sd1MM,sd1MM,sd1J,sd1V,sd1S,sd1D}, sede2[]={3};
+        double sede1[]={sd1L,sd1MM,sd1MM,sd1J,sd1V,sd1S,sd1D}, sede2[]={sd2L,sd2MM,sd2MM,sd2J,sd2V,sd2S,sd2D};
 
         do {
-            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Máximas ventas de cada sede.\n   - Opción 2: Mínimas ventas de cada sede.\n   - Opción 3: Recaudo total de cada sede.\n   - Opción 4: Recaudo total por día de cada sede.\n   - Opción 5: Similitud de ventas por día de cada sede.\n   - Opción 6: Totalidad de ventas.\n   - Opción 7: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
+            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Ventas de cada sede.\n   - Opción 2: Máximas ventas de cada sede.\n   - Opción 3: Mínimas ventas de cada sede.\n   - Opción 4: Recaudo total de cada sede.\n   - Opción 5: Recaudo total por día de cada sede.\n   - Opción 6: Similitud de ventas por día de cada sede.\n   - Opción 7: Totalidad de ventas.\n   - Opción 8: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
             switch (menu) {
                 case 1: 
-                    max(sede1,sede2);
-                    System.out.println(sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]);
+                    JOptionPane.showMessageDialog(null,"Ventas por sede:\n   - La Pintada:\n>>> "+sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]+".\n   - Santa Fe de Antioquia:\n>>> "+sede2[0]+" "+sede2[1]+" "+sede2[2]+" "+sede2[3]+" "+sede2[4]+" "+sede2[5]+" "+sede2[6]+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 2: 
-                
+                    max(sede1,sede2);
                     break;
                 case 3: 
-
+                    min(sede1,sede2);
                     break;
                 case 4: 
                 
@@ -173,34 +172,69 @@ public class Plan_4 {
                 case 6: 
                 
                     break;
-                case 7: break;
+                case 7: 
+
+                    break;
+                case 8: break;
                 default: 
                 JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE); break;
             }
-        } while (menu!=7);
+        } while (menu!=8);
     }
 
     static void max(double sede1[], double sede2[]) {
+        double mx1=0, mx2=0, v1, v2;   
+
+        v2=sede1[0];
+        for (int c1=1;c1<sede1.length;c1++) {
+            v1=sede1[c1];
+            mx1=Math.max(v1,v2);
+            v2=mx1;
+        }
+
+        v2=sede2[0];
+        for (int c1=1;c1<sede2.length;c1++) {
+            v1=sede2[c1];
+            mx2=Math.max(v1,v2);
+            v2=mx2;
+        }
+        
+        JOptionPane.showMessageDialog(null,"Máximas ventas por sede:\n   - La Pintada: "+mx1+".\n   - Santa Fe de Antioquia: "+mx2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    static void min(double sede1[], double sede2[]) {
+        double mn1=0, mn2=0, v1, v2;   
+
+        v2=sede1[0];
+        for (int c1=1;c1<sede1.length;c1++) {
+            v1=sede1[c1];
+            mn1=Math.min(v1,v2);
+            v2=mn1;
+        }
+
+        v2=sede2[0];
+        for (int c1=1;c1<sede2.length;c1++) {
+            v1=sede2[c1];
+            mn2=Math.min(v1,v2);
+            v2=mn2;
+        }
+        
+        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada: "+mn1+".\n   - Santa Fe de Antioquia: "+mn2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    static void total(double sede1[], double sede2[]) {
+
+    }
+
+    static void dia(double sede1[], double sede2[]) {
         
     }
 
-    static void min(int sede1[], int sede2[]) {
-
-    }
-
-    static void total(int sede1[], int sede2[]) {
-
-    }
-
-    static void dia(int sede1[], int sede2[]) {
+    static void similitud(double sede1[], double sede2[]) {
         
     }
 
-    static void similitud(int sede1[], int sede2[]) {
-        
-    }
-
-    static void general(int sede1[], int sede2[]) {
+    static void general(double sede1[], double sede2[]) {
         
     }
 }
