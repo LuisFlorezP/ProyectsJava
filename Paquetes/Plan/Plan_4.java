@@ -147,20 +147,60 @@ public class Plan_4 {
 
     static void ventas() {
         int menu;
+        double sd1L=Math.round(Math.random()*60), sd1M=Math.round(Math.random()*60), sd1MM=Math.round(Math.random()*60), sd1J=Math.round(Math.random()*60), sd1V=Math.round(Math.random()*60), sd1S=Math.round(Math.random()*60), sd1D=Math.round(Math.random()*60);
+        double sd2L=Math.round(Math.random()*60), sd2M=Math.round(Math.random()*60), sd2MM=Math.round(Math.random()*60), sd2J=Math.round(Math.random()*60), sd2V=Math.round(Math.random()*60), sd2S=Math.round(Math.random()*60), sd2D=Math.round(Math.random()*60);
+        double sede1[]={sd1L,sd1MM,sd1MM,sd1J,sd1V,sd1S,sd1D}, sede2[]={3};
 
         do {
             menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Máximas ventas de cada sede.\n   - Opción 2: Mínimas ventas de cada sede.\n   - Opción 3: Recaudo total de cada sede.\n   - Opción 4: Recaudo total por día de cada sede.\n   - Opción 5: Similitud de ventas por día de cada sede.\n   - Opción 6: Totalidad de ventas.\n   - Opción 7: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
             switch (menu) {
-                case 1: break;
-                case 2: break;
-                case 3: break;
-                case 4: break;
-                case 5: break;
-                case 6: break;
+                case 1: 
+                    max(sede1,sede2);
+                    System.out.println(sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]);
+                    break;
+                case 2: 
+                
+                    break;
+                case 3: 
+
+                    break;
+                case 4: 
+                
+                    break;
+                case 5: 
+                
+                    break;
+                case 6: 
+                
+                    break;
                 case 7: break;
                 default: 
                 JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE); break;
             }
         } while (menu!=7);
+    }
+
+    static void max(double sede1[], double sede2[]) {
+        
+    }
+
+    static void min(int sede1[], int sede2[]) {
+
+    }
+
+    static void total(int sede1[], int sede2[]) {
+
+    }
+
+    static void dia(int sede1[], int sede2[]) {
+        
+    }
+
+    static void similitud(int sede1[], int sede2[]) {
+        
+    }
+
+    static void general(int sede1[], int sede2[]) {
+        
     }
 }
