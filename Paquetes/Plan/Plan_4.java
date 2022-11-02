@@ -257,6 +257,18 @@ public class Plan_4 {
     }
 
     static void general(double sede1[], double sede2[]) {
+        double t1=0, t2=0, t=0;
+        
+        for (double arreglo : sede1) {
+            t1+=arreglo;
+        }
+
+        for (double arreglo : sede2) {
+            t2+=arreglo;
+        }
+
+        t=t1+t2;
+        JOptionPane.showMessageDialog(null,"Totalidad de ventas entre ambas sedes: "+t+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
         
     }
 }
