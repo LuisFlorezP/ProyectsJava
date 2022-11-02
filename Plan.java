@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Plan {
+public class Plan_4 {
     public static void main(String[] args){
         String nombre, documento, categoria, vehiculo, factura;
         int menu, personas, valorV;
@@ -181,12 +181,34 @@ public class Plan {
 
     static void max(double sede1[], double sede2[]) {
         double mx1=0, mx2=0, v1, v2;   
+        String dia1, dia2;
 
         v2=sede1[0];
         for (int c1=1;c1<sede1.length;c1++) {
             v1=sede1[c1];
             mx1=Math.max(v1,v2);
             v2=mx1;
+        }
+        if (mx1==sede1[0]) {
+            dia1="Lunes";
+        }
+        else if (mx1==sede1[1]) {
+            dia1="Martes";
+        }
+        else if (mx1==sede1[2]) {
+            dia1="Miercoles";
+        }
+        else if (mx1==sede1[3]) {
+            dia1="Jueves";
+        }
+        else if (mx1==sede1[4]) {
+            dia1="Viernes";
+        }
+        else if (mx1==sede1[5]) {
+            dia1="Sábado";
+        }
+        else {
+            dia1="Domingo";
         }
 
         v2=sede2[0];
@@ -195,18 +217,61 @@ public class Plan {
             mx2=Math.max(v1,v2);
             v2=mx2;
         }
+        if (mx2==sede2[0]) {
+            dia2="Lunes";
+        }
+        else if (mx2==sede2[1]) {
+            dia2="Martes";
+        }
+        else if (mx2==sede2[2]) {
+            dia2="Miercoles";
+        }
+        else if (mx2==sede2[3]) {
+            dia2="Jueves";
+        }
+        else if (mx2==sede2[4]) {
+            dia2="Viernes";
+        }
+        else if (mx2==sede2[5]) {
+            dia2="Sábado";
+        }
+        else {
+            dia2="Domingo";
+        }
         
-        JOptionPane.showMessageDialog(null,"Máximas ventas por sede:\n   - La Pintada: "+mx1+".\n   - Santa Fe de Antioquia: "+mx2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Máximas ventas por sede:\n   - La Pintada ("+dia1+"): "+mx1+".\n   - Santa Fe de Antioquia ("+dia2+"): "+mx2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void min(double sede1[], double sede2[]) {
-        double mn1=0, mn2=0, v1, v2;   
+        double mn1=0, mn2=0, v1, v2;
+        String dia1, dia2;   
 
         v2=sede1[0];
         for (int cont=1;cont<sede1.length;cont++) {
             v1=sede1[cont];
             mn1=Math.min(v1,v2);
             v2=mn1;
+        }
+        if (mn1==sede1[0]) {
+            dia1="Lunes";
+        }
+        else if (mn1==sede1[1]) {
+            dia1="Martes";
+        }
+        else if (mn1==sede1[2]) {
+            dia1="Miercoles";
+        }
+        else if (mn1==sede1[3]) {
+            dia1="Jueves";
+        }
+        else if (mn1==sede1[4]) {
+            dia1="Viernes";
+        }
+        else if (mn1==sede1[5]) {
+            dia1="Sábado";
+        }
+        else {
+            dia1="Domingo";
         }
 
         v2=sede2[0];
@@ -215,9 +280,29 @@ public class Plan {
             mn2=Math.min(v1,v2);
             v2=mn2;
         }
+        if (mn2==sede1[0]) {
+            dia2="Lunes";
+        }
+        else if (mn2==sede1[1]) {
+            dia2="Martes";
+        }
+        else if (mn2==sede1[2]) {
+            dia2="Miercoles";
+        }
+        else if (mn2==sede1[3]) {
+            dia2="Jueves";
+        }
+        else if (mn2==sede1[4]) {
+            dia2="Viernes";
+        }
+        else if (mn2==sede1[5]) {
+            dia2="Sábado";
+        }
+        else {
+            dia2="Domingo";
+        }
         
-        
-        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada: "+mn1+".\n   - Santa Fe de Antioquia: "+mn2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada ("+dia1+"): "+mn1+".\n   - Santa Fe de Antioquia ("+dia2+"): "+mn2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void total(double sede1[], double sede2[]) {
@@ -235,12 +320,18 @@ public class Plan {
     }
 
     static void similitud(double sede1[], double sede2[]) {
-        String men1="", men2="";
+        String men1="", men2="", dia1="", dia11="", dia2="", dia22="";
+        double d1, d2;
 
         for (int c1=0;c1<sede1.length;c1++) {
             for (int c2=c1+1;c2<sede1.length;c2++) {
                 if (sede1[c1]==sede1[c2]) {
-                    men1+=String.valueOf(sede1[c1])+" ";
+                    d1=sede1[c1];
+                    dia1=dia1(sede1,d1);
+                    d1=sede1[c2];
+                    dia11=dia11(sede1,d1);
+                    men1+="   - ("+dia1+","+dia11+"): "+String.valueOf(sede1[c1])+".\n";
+                    
                 }
             }
         }
@@ -248,12 +339,129 @@ public class Plan {
         for (int c1=0;c1<sede2.length;c1++) {
             for (int c2=c1+1;c2<sede2.length;c2++) {
                 if (sede2[c1]==sede2[c2]) {
-                    men2+=String.valueOf(sede2[c1]+" ");
+                    d2=sede2[c1];
+                    dia2=dia2(sede2,d2);
+                    d2=sede2[c2];
+                    dia22=dia22(sede2,d2);
+                    men2+="   - ("+dia2+","+dia22+"): "+String.valueOf(sede2[c1])+".\n";
+                    
                 }
             }
         }
 
-        JOptionPane.showMessageDialog(null,"Ventas similares por sede:\n   - La Pintada: "+men1+"\n   - Santa Fe de Antioquia: "+men2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Ventas similares por sede:\n- La Pintada:\n"+men1+"- Santa Fe de Antioquia:\n"+men2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    static String dia1(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[0]) {
+            dia="Lunes";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else {
+            dia="Domingo";
+        }
+
+        return (dia);
+    }
+
+    static String dia11(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[6]) {
+            dia="Domingo";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else {
+            dia="Lunes";
+        }
+
+        return (dia);
+    }
+
+    static String dia2(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[0]) {
+            dia="Lunes";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else {
+            dia="Domingo";
+        }
+
+        return (dia);
+    }
+
+    static String dia22(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[6]) {
+            dia="Domingo";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else {
+            dia="Lunes";
+        }
+
+        return (dia);
     }
 
     static void general(double sede1[], double sede2[]) {
