@@ -152,7 +152,7 @@ public class Plan_4 {
         double sede1[]={sd1L,sd1MM,sd1MM,sd1J,sd1V,sd1S,sd1D}, sede2[]={sd2L,sd2MM,sd2MM,sd2J,sd2V,sd2S,sd2D};
 
         do {
-            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Ventas de cada sede.\n   - Opción 2: Máximas ventas de cada sede.\n   - Opción 3: Mínimas ventas de cada sede.\n   - Opción 4: Recaudo total de cada sede.\n   - Opción 5: Recaudo total por día de cada sede.\n   - Opción 6: Similitud de ventas por día de cada sede.\n   - Opción 7: Totalidad de ventas.\n   - Opción 8: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
+            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Ventas de cada sede.\n   - Opción 2: Máximas ventas de cada sede.\n   - Opción 3: Mínimas ventas de cada sede.\n   - Opción 4: Recaudo total de cada sede.\n   - Opción 5: Similitud de ventas por día de cada sede.\n   - Opción 6: Totalidad de ventas.\n   - Opción 7: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
             switch (menu) {
                 case 1: 
                     JOptionPane.showMessageDialog(null,"Ventas por sede:\n   - La Pintada:\n>>> "+sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]+".\n   - Santa Fe de Antioquia:\n>>> "+sede2[0]+" "+sede2[1]+" "+sede2[2]+" "+sede2[3]+" "+sede2[4]+" "+sede2[5]+" "+sede2[6]+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
@@ -167,19 +167,16 @@ public class Plan_4 {
                     total(sede1,sede2);
                     break;
                 case 5: 
-                    dia(sede1,sede2);
-                    break;
-                case 6: 
                     similitud(sede1,sede2);
                     break;
-                case 7: 
+                case 6: 
                     general(sede1,sede2);
                     break;
-                case 8: break;
+                case 7: break;
                 default: 
                 JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE); break;
             }
-        } while (menu!=8);
+        } while (menu!=7);
     }
 
     static void max(double sede1[], double sede2[]) {
@@ -236,10 +233,6 @@ public class Plan_4 {
         JOptionPane.showMessageDialog(null,"Total ventas por sede:\n   - La Pintada: "+t1+".\n   - Santa Fe de Antioquia: "+t2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
 
         t1=0; t2=0;
-    }
-
-    static void dia(double sede1[], double sede2[]) {
-        
     }
 
     static void similitud(double sede1[], double sede2[]) {
