@@ -155,7 +155,7 @@ public class Plan_4 {
             menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Ventas de cada sede.\n   - Opción 2: Máximas ventas de cada sede.\n   - Opción 3: Mínimas ventas de cada sede.\n   - Opción 4: Recaudo total de cada sede.\n   - Opción 5: Similitud de ventas por día de cada sede.\n   - Opción 6: Totalidad de ventas.\n   - Opción 7: Menú anterior.\nIngresar opción:","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.QUESTION_MESSAGE));
             switch (menu) {
                 case 1: 
-                    JOptionPane.showMessageDialog(null,"Ventas por sede:\n   - La Pintada:\n>>> "+sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]+".\n   - Santa Fe de Antioquia:\n>>> "+sede2[0]+" "+sede2[1]+" "+sede2[2]+" "+sede2[3]+" "+sede2[4]+" "+sede2[5]+" "+sede2[6]+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Ventas por sede:\n   - La Pintada:\n        Lun  Mar  Mie  Jue  Vie  Sab  Dom\n>>> "+sede1[0]+" "+sede1[1]+" "+sede1[2]+" "+sede1[3]+" "+sede1[4]+" "+sede1[5]+" "+sede1[6]+".\n   - Santa Fe de Antioquia:\n        Lun  Mar  Mie  Jue  Vie  Sab  Dom\n>>> "+sede2[0]+" "+sede2[1]+" "+sede2[2]+" "+sede2[3]+" "+sede2[4]+" "+sede2[5]+" "+sede2[6]+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 2: 
                     max(sede1,sede2);
@@ -196,7 +196,7 @@ public class Plan_4 {
             v2=mx2;
         }
         
-        JOptionPane.showMessageDialog(null,"Máximas ventas por sede:\n   - La Pintada: "+mx1+".\n   - Santa Fe de Antioquia: "+mx2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Máximas ventas por sede:\n   - La Pintada: "+mx1+".\n   - Santa Fe de Antioquia: "+mx2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void min(double sede1[], double sede2[]) {
@@ -216,7 +216,8 @@ public class Plan_4 {
             v2=mn2;
         }
         
-        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada: "+mn1+".\n   - Santa Fe de Antioquia: "+mn2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        
+        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada: "+mn1+".\n   - Santa Fe de Antioquia: "+mn2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void total(double sede1[], double sede2[]) {
@@ -230,13 +231,29 @@ public class Plan_4 {
             t2+=arreglo;
         }
 
-        JOptionPane.showMessageDialog(null,"Total ventas por sede:\n   - La Pintada: "+t1+".\n   - Santa Fe de Antioquia: "+t2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
-
-        t1=0; t2=0;
+        JOptionPane.showMessageDialog(null,"Total ventas por sede:\n   - La Pintada: "+t1+".\n   - Santa Fe de Antioquia: "+t2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void similitud(double sede1[], double sede2[]) {
-        
+        String men1="", men2="";
+
+        for (int c1=0;c1<sede1.length;c1++) {
+            for (int c2=c1+1;c2<sede1.length;c2++) {
+                if (sede1[c1]==sede1[c2]) {
+                    men1+=String.valueOf(sede1[c1])+" ";
+                }
+            }
+        }
+
+        for (int c1=0;c1<sede2.length;c1++) {
+            for (int c2=c1+1;c2<sede2.length;c2++) {
+                if (sede2[c1]==sede2[c2]) {
+                    men2+=String.valueOf(sede2[c1]+" ");
+                }
+            }
+        }
+
+        JOptionPane.showMessageDialog(null,"Ventas similares por sede:\n   - La Pintada: "+men1+"\n   - Santa Fe de Antioquia: "+men2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void general(double sede1[], double sede2[]) {
