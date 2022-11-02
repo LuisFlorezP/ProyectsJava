@@ -320,12 +320,18 @@ public class Plan_4 {
     }
 
     static void similitud(double sede1[], double sede2[]) {
-        String men1="", men2="";
+        String men1="", men2="", dia1="", dia11="", dia2="", dia22="";
+        double d1, d2;
 
         for (int c1=0;c1<sede1.length;c1++) {
             for (int c2=c1+1;c2<sede1.length;c2++) {
                 if (sede1[c1]==sede1[c2]) {
-                    men1+=String.valueOf(sede1[c1])+" ";
+                    d1=sede1[c1];
+                    dia1=dia1(sede1,d1);
+                    d1=sede1[c2];
+                    dia11=dia11(sede1,d1);
+                    men1+="   - ("+dia1+","+dia11+"): "+String.valueOf(sede1[c1])+".\n";
+                    
                 }
             }
         }
@@ -333,12 +339,129 @@ public class Plan_4 {
         for (int c1=0;c1<sede2.length;c1++) {
             for (int c2=c1+1;c2<sede2.length;c2++) {
                 if (sede2[c1]==sede2[c2]) {
-                    men2+=String.valueOf(sede2[c1]+" ");
+                    d2=sede2[c1];
+                    dia2=dia2(sede2,d2);
+                    d2=sede2[c2];
+                    dia22=dia22(sede2,d2);
+                    men2+="   - ("+dia2+","+dia22+"): "+String.valueOf(sede2[c1])+".\n";
+                    
                 }
             }
         }
 
-        JOptionPane.showMessageDialog(null,"Ventas similares por sede:\n   - La Pintada: "+men1+"\n   - Santa Fe de Antioquia: "+men2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Ventas similares por sede:\n- La Pintada:\n"+men1+"- Santa Fe de Antioquia:\n"+men2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    static String dia1(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[0]) {
+            dia="Lunes";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else {
+            dia="Domingo";
+        }
+
+        return (dia);
+    }
+
+    static String dia11(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[6]) {
+            dia="Domingo";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else {
+            dia="Lunes";
+        }
+
+        return (dia);
+    }
+
+    static String dia2(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[0]) {
+            dia="Lunes";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else {
+            dia="Domingo";
+        }
+
+        return (dia);
+    }
+
+    static String dia22(double sede[], double valor) {
+        String dia="";
+        
+        if (valor==sede[6]) {
+            dia="Domingo";
+        }
+        else if (valor==sede[5]) {
+            dia="Sábado";
+        }
+        else if (valor==sede[4]) {
+            dia="Viernes";
+        }
+        else if (valor==sede[3]) {
+            dia="Jueves";
+        }
+        else if (valor==sede[2]) {
+            dia="Miercoles";
+        }
+        else if (valor==sede[1]) {
+            dia="Martes";
+        }
+        else {
+            dia="Lunes";
+        }
+
+        return (dia);
     }
 
     static void general(double sede1[], double sede2[]) {
