@@ -5,10 +5,8 @@ public class Tablas_1 {
         // Definir variables
         String menu="";
         int numero=0, resul=0, cont=1, cont2=1, fin=0, t1=0, t2=0, t3=0, t4=0, t5=0, t6=0, t7=0, t8=0, t9=0, t10=0;
-
         // Saludo 
         JOptionPane.showMessageDialog(null,"☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯\nBIENVENIDO AL PROGRAMA DE LAS TABLAS DE MULTIPLICAR\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯","LUCHINI S.A.S",JOptionPane.INFORMATION_MESSAGE);
-        
         // Ciclo para ir a la opción tablas o cerrar sistema
         do {
             // Ingresar opción del menú
