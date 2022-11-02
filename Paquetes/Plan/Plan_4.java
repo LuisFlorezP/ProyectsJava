@@ -243,13 +243,35 @@ public class Plan_4 {
     }
 
     static void min(double sede1[], double sede2[]) {
-        double mn1=0, mn2=0, v1, v2;   
+        double mn1=0, mn2=0, v1, v2;
+        String dia1, dia2;   
 
         v2=sede1[0];
         for (int cont=1;cont<sede1.length;cont++) {
             v1=sede1[cont];
             mn1=Math.min(v1,v2);
             v2=mn1;
+        }
+        if (mn1==sede1[0]) {
+            dia1="Lunes";
+        }
+        else if (mn1==sede1[1]) {
+            dia1="Martes";
+        }
+        else if (mn1==sede1[2]) {
+            dia1="Miercoles";
+        }
+        else if (mn1==sede1[3]) {
+            dia1="Jueves";
+        }
+        else if (mn1==sede1[4]) {
+            dia1="Viernes";
+        }
+        else if (mn1==sede1[5]) {
+            dia1="Sábado";
+        }
+        else {
+            dia1="Domingo";
         }
 
         v2=sede2[0];
@@ -258,9 +280,29 @@ public class Plan_4 {
             mn2=Math.min(v1,v2);
             v2=mn2;
         }
+        if (mn2==sede1[0]) {
+            dia2="Lunes";
+        }
+        else if (mn2==sede1[1]) {
+            dia2="Martes";
+        }
+        else if (mn2==sede1[2]) {
+            dia2="Miercoles";
+        }
+        else if (mn2==sede1[3]) {
+            dia2="Jueves";
+        }
+        else if (mn2==sede1[4]) {
+            dia2="Viernes";
+        }
+        else if (mn2==sede1[5]) {
+            dia2="Sábado";
+        }
+        else {
+            dia2="Domingo";
+        }
         
-        
-        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada: "+mn1+".\n   - Santa Fe de Antioquia: "+mn2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Mínimas ventas por sede:\n   - La Pintada ("+dia1+"): "+mn1+".\n   - Santa Fe de Antioquia ("+dia2+"): "+mn2+".","❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
     }
 
     static void total(double sede1[], double sede2[]) {
