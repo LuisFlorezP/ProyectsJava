@@ -164,16 +164,16 @@ public class Plan_4 {
                     min(sede1,sede2);
                     break;
                 case 4: 
-                
+                    total(sede1,sede2);
                     break;
                 case 5: 
-                
+                    dia(sede1,sede2);
                     break;
                 case 6: 
-                
+                    similitud(sede1,sede2);
                     break;
                 case 7: 
-
+                    general(sede1,sede2);
                     break;
                 case 8: break;
                 default: 
@@ -206,15 +206,15 @@ public class Plan_4 {
         double mn1=0, mn2=0, v1, v2;   
 
         v2=sede1[0];
-        for (int c1=1;c1<sede1.length;c1++) {
-            v1=sede1[c1];
+        for (int cont=1;cont<sede1.length;cont++) {
+            v1=sede1[cont];
             mn1=Math.min(v1,v2);
             v2=mn1;
         }
 
         v2=sede2[0];
-        for (int c1=1;c1<sede2.length;c1++) {
-            v1=sede2[c1];
+        for (int cont=1;cont<sede2.length;cont++) {
+            v1=sede2[cont];
             mn2=Math.min(v1,v2);
             v2=mn2;
         }
@@ -223,7 +223,19 @@ public class Plan_4 {
     }
 
     static void total(double sede1[], double sede2[]) {
+        double t1=0, t2=0;
+        
+        for (double arreglo : sede1) {
+            t1+=arreglo;
+        }
 
+        for (double arreglo : sede2) {
+            t2+=arreglo;
+        }
+
+        JOptionPane.showMessageDialog(null,"Total ventas por sede:\n   - La Pintada: "+t1+".\n   - Santa Fe de Antioquia: "+t2,"❃❃❃PLAN FAMILIAR❃❃❃",JOptionPane.INFORMATION_MESSAGE);
+
+        t1=0; t2=0;
     }
 
     static void dia(double sede1[], double sede2[]) {
