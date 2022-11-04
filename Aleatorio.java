@@ -29,7 +29,7 @@ public class Aleatorio {
                 // Opción de cerrar sistema 
                 case 2:
                     // Mensaje de cerrar sistema
-                    JOptionPane.showMessageDialog(null,"Saliendo...","☸☸☸FIN ADIVINAR NÚMERO☸☸☸",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Saliendo del sistema...","LUCHINI S.A.S",JOptionPane.WARNING_MESSAGE);
                     break;
                 // Opción de digitación incorrecta
                 default:
