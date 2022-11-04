@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Aleatorio {
+public class Aleatorio_1 {
     // Definir variables
     static String nombre="", documento="", nomGanador="", docGanador="", premio1="Smart TV", premio2="Laptop", premio="";
     static int opPremio, eleccion=0, ganador=0, fin=0, finRifa=0, fallo=0, cont=1;
