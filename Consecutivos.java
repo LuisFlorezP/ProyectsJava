@@ -1,21 +1,45 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Consecutivos {
-    public static void main(String[] args ){
-        // Crear scanner
-        Scanner sc = new Scanner(System.in);
-        // Definir variables
-        int numero=1, contador=0;
+    public static void main(String args[]){
+        String resul="";
+        int menu=0;
 
-        // Pedir el límite al usuario para la consecutividad
-        System.out.print("\nIngresa el límite de números consecutivos a partir de 1: ");
-        contador=sc.nextInt();
-        System.out.println("IMPRESIÓN NÚMEROS.\n");
-        // Imprimir los números de 1 en 1 hasta llegar al límite
-        while (numero<=contador) {
-            System.out.println("Numero: "+numero);
-            ++numero;
+        JOptionPane.showMessageDialog(null,"⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟\nBIENVENIDO AL PROGRAMA CONSECUTIVOS\n⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟⍟","LUCHINI S.A.S",JOptionPane.INFORMATION_MESSAGE);
+        do {
+            menu=Integer.parseInt(JOptionPane.showInputDialog(null,"   - Opción 1: Consecutivos.\n   - Opción 2: Cerrar sistema.","⍟⍟⍟CONSECUTIVOS⍟⍟⍟",JOptionPane.QUESTION_MESSAGE));
+            switch (menu) {
+                case 1:
+                    resul=consecutivo();
+                    JOptionPane.showMessageDialog(null,resul,"⍟⍟⍟CONSECUTIVOS⍟⍟⍟",JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null,"Saliendo del sistema...","LUCHINI S.A.S",JOptionPane.WARNING_MESSAGE);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+        } while (menu!=2);        
+    }
+
+    static String consecutivo() {
+        String mensaje="";
+        int numero=1, limite=0;
+
+        limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el límite de números consecutivos a partir de 1: ","⍟⍟⍟CONSECUTIVOS⍟⍟⍟",JOptionPane.QUESTION_MESSAGE));
+
+        mensaje="IMPRESIÓN NÚMEROS.\n   - Secuencia: ";
+        while (numero<=limite) {
+            if (numero==limite) {
+                mensaje+=numero+".";
+                numero++;
+            }
+            else {
+                mensaje+=numero+", ";
+                numero++;
+            }
         }
-        System.out.println("");
+        return (mensaje);
     }
 }
