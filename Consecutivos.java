@@ -25,20 +25,27 @@ public class Consecutivos {
 
     static String consecutivo() {
         String mensaje="";
-        int numero=1, limite=0;
+        int numero=1, limite=0, bloque=0;
 
         limite=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el límite de números consecutivos a partir de 1: ","⍟⍟⍟CONSECUTIVOS⍟⍟⍟",JOptionPane.QUESTION_MESSAGE));
 
-        mensaje="IMPRESIÓN NÚMEROS.\n   - Secuencia: ";
+        mensaje="IMPRESIÓN NÚMEROS.\n   - Secuencia:\n   ";
         while (numero<=limite) {
-            if (numero==limite) {
-                mensaje+=numero+".";
-                numero++;
+            if (bloque!=10) {
+                if (numero==limite) {
+                    mensaje+=numero+".";
+                    numero++;
+                }
+                else {
+                    mensaje+=numero+", ";
+                    numero++;
+                }
+                bloque++;
             }
             else {
-                mensaje+=numero+", ";
-                numero++;
-            }
+                mensaje+="\n   ";
+                bloque=0;
+            }            
         }
         return (mensaje);
     }
