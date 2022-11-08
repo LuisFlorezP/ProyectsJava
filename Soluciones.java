@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
  
-public class Semana {
+public class Soluciones {
     public static void main(String[] args) {
         String resul1="", resul2="", resul3="";
         double def=0, perimetro=0, n1=0, n2=0, n3=0, n4=0, p1=0.25, p2=0.2, p3=0.3;
