@@ -21,14 +21,14 @@ public class Soluciones {
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null,"BIENVENIDO AL PROGRAMA PERÍMETRO","✪✪✪PERÍMETRO✪✪✪",JOptionPane.QUESTION_MESSAGE);
-                    perimetro=diametro*Math.PI;
-                    System.out.println("Perímetro de un círculo con diámetro 6: "+perimetro);
+                    //perimetro=diametro*Math.PI;
+                    //System.out.println("Perímetro de un círculo con diámetro 6: "+perimetro);
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null,"Saliendo del sistema...","LUCHINI S.A.S",JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.QUESTION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
                     break;
             }
         } while (menu!=4);
@@ -57,56 +57,25 @@ public class Soluciones {
 
     static String notas() {
         String mensaje="";
-        
-        do {
-            n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°1 del 25%: ","✪✪✪NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-            if (n1>=0&&n1<=5) {
-                n1=n1*p1;  
-                r=0;
-            } 
-            else {
-                JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.QUESTION_MESSAGE);
-                ++r;
-            }
-        } while (r>=1);
-            r=0;
-        do {
-            n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°2 del 25%: ","✪✪✪NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-            if (n2>=0&&n2<=5) {
-                n2=n2*p1; 
-                r=0;
-            } 
-            else {
-                JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.QUESTION_MESSAGE);
-                ++r;
-            }
-        } while (r>=1);
-            r=0;
-        do {
-            n3=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°3 del 20%: ","✪✪✪OTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-            if (n3>=0&&n3<=5) {
-                n3=n3*p2;  
-                r=0;
-            } 
-            else {
-                JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.QUESTION_MESSAGE);
-                ++r;
-            }
-        } while (r>=1);
-            r=0;
-        do {
-            n4=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota n°4 del 30%: ","✪✪✪NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
-            if (n4>=0&&n4<=5) {
-                n4=n4*p3;    
-                r=0;
-            } 
-            else {
-                JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.QUESTION_MESSAGE);
-                ++r;
-            }
-        } while (r>=1);
-        def=n1+n2+n3+n4;
-        System.out.println("La nota definitiva es: "+def);
+        double nota=0, total=0;
+
+        mensaje="Nota definitiva: ";
+        for (int ct=1;ct<=4;ct++) {
+            do {
+                nota=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese nota N°"+ct+" del 25%: ","✪✪✪NOTAS✪✪✪",JOptionPane.QUESTION_MESSAGE));
+                if (nota>=0&&nota<=5) {
+                    total+=nota;
+                } 
+                else {
+                    JOptionPane.showMessageDialog(null,"Opción incorrecta, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+                }
+            } while (nota<0||nota>5);
+        }
+        total=total/4;
+        total*=10;
+        total=Math.round(total);
+        total/=10;
+        mensaje+=total+".";
         
         return (mensaje);
     }
