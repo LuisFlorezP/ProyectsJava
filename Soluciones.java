@@ -20,9 +20,9 @@ public class Soluciones {
                     JOptionPane.showMessageDialog(null,resul2,"✪✪✪NOTAS✪✪✪",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 3:
-                    JOptionPane.showMessageDialog(null,"BIENVENIDO AL PROGRAMA PERÍMETRO","✪✪✪PERÍMETRO✪✪✪",JOptionPane.QUESTION_MESSAGE);
-                    //perimetro=diametro*Math.PI;
-                    //System.out.println("Perímetro de un círculo con diámetro 6: "+perimetro);
+                    JOptionPane.showMessageDialog(null,"BIENVENIDO AL PROGRAMA PERÍMETRO","✪✪✪PERÍMETRO✪✪✪",JOptionPane.INFORMATION_MESSAGE);
+                    resul3=perimetro();
+                    JOptionPane.showMessageDialog(null,resul3,"✪✪✪PERÍMETRO✪✪✪",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null,"Saliendo del sistema...","LUCHINI S.A.S",JOptionPane.WARNING_MESSAGE);
@@ -80,7 +80,18 @@ public class Soluciones {
         return (mensaje);
     }
 
-    static void perimetro() {
+    static String perimetro() {
+        String mensaje="";
+        double dm=0, pm=0;
 
+        mensaje="Perímetro de un círculo con diámetro ";
+        dm=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar diámetro del círculo para saber su perímetro:","✪✪✪PERÍMETRO✪✪✪",JOptionPane.QUESTION_MESSAGE));
+        pm=dm*Math.PI;
+        pm*=10;
+        pm=Math.round(pm);
+        pm/=10;
+        mensaje+=dm+": "+pm;
+
+        return (mensaje);
     }
 }
