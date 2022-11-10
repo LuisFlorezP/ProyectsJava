@@ -50,8 +50,22 @@ public class Nota{
     
     static String promedio2() {
         String mensaje="";
+        double total=100, p1=0, p2=0, p3=0, n1=0, n2=0, n3=0, def=0;
 
-
+        mensaje="Promedio de las 3 notas ingresadas: ";
+        p1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y 99%) de la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        p2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y "+(total-p1)+"%) de la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        p3=total-p1-p2;
+        n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n3=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la tercer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n1*=p1;
+        n2*=p2;
+        n3*=p3;
+        def=(n1+n2+n3)/10;
+        def=Math.round(def);
+        def/=10;
+        mensaje+=def+".";       
 
         return (mensaje);
     }
