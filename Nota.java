@@ -101,8 +101,53 @@ public class Nota{
 
     static String promedioN() {
         String mensaje="";
+        int cant=0, fin=0;
+        double nota=0, total=100, por=1, def=0;
 
-
+        do {
+            cant=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresar la cantidad de notas que desea utilizar (valor mayor a 0):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            if (cant<=0) {
+                JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+            }
+        } while (cant<=0);
+        mensaje="Promedio de las "+cant+" notas ingresadas: ";
+        for (int ct=1;ct<cant;ct++) {
+            do {
+                nota=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la nota N°"+ct+" (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+                if (nota>=0&&nota<=5) {
+                    fin++;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+                }
+            } while (fin==0);
+            do {
+                por=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje de la nota N°"+ct+" (valor entre 1% y "+total+"%):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+                if (por>=1&&por<total) {
+                    total-=por;
+                    fin++;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+                }
+            } while (fin==1);
+            def+=nota*por;
+            fin=0;
+        }
+        do {
+            nota=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la nota N°"+cant+" (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            if (nota>=0&&nota<=5) {
+                fin++;
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+            } // 1.148   0.90519   1.57027
+        } while (fin==0);
+        def+=nota*total;        
+        def/=10;
+        def=Math.round(def);
+        def/=10;
+        mensaje+=def+"."; 
 
         return (mensaje);
     }
