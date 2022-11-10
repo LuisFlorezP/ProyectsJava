@@ -46,7 +46,7 @@ public class Nota{
         } while (fin==0);
         p2=total-p1;
         do {
-            n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
             if (n1>=0&&n1<=5) {
                 fin++;
             }
@@ -55,7 +55,7 @@ public class Nota{
             }
         } while (fin==1);
         do {
-            n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
             if (n2>=0&&n2<=5) {
                 fin++;
             }
@@ -81,9 +81,9 @@ public class Nota{
         p1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y 99%) de la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
         p2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y "+(total-p1)+"%) de la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
         p3=total-p1-p2;
-        n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
-        n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
-        n3=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la tercer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        n3=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la tercer nota (valor entre 0 y 5):","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
         n1*=p1;
         n2*=p2;
         n3*=p3;
