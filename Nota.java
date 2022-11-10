@@ -32,12 +32,37 @@ public class Nota{
     static String promedio1() {
         String mensaje="";
         double total=100, p1=0, p2=0, n1=0, n2=0, def=0;
+        int fin=0;
 
         mensaje="Promedio de las 2 notas ingresadas: ";
-        p1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y 99%) de la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        do {
+            p1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar el porcentaje (valor entre 1% y 99%) de la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            if (p1>=1&&p1<=99) {
+                fin++;
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+            }
+        } while (fin==0);
         p2=total-p1;
-        n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
-        n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+        do {
+            n1=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la primer nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            if (n1>=0&&n1<=5) {
+                fin++;
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+            }
+        } while (fin==1);
+        do {
+            n2=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresar la segunda nota:","■━■━■NOTA■━■━■",JOptionPane.QUESTION_MESSAGE));
+            if (n2>=0&&n2<=5) {
+                fin++;
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
+            }
+        } while (fin==2);
         n1*=p1;
         n2*=p2;
         def=(n1+n2)/10;
