@@ -141,7 +141,7 @@ public class Nota{
             }
             else {
                 JOptionPane.showMessageDialog(null,"Valor incorrecto, vuelva a intentarlo.","❌❌❌ERROR❌❌❌",JOptionPane.ERROR_MESSAGE);
-            } // 1.148   0.90519   1.57027
+            } 
         } while (fin==0);
         def+=nota*total;        
         def/=10;
