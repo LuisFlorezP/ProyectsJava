@@ -1,4 +1,3 @@
-import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.JOptionPane;
 
 public class Nota{
@@ -52,7 +51,7 @@ public class Nota{
     static String promedio2() {
         String mensaje="";
 
-        
+
 
         return (mensaje);
     }
