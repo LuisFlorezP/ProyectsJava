@@ -1,7 +1,5 @@
 import javax.swing.JOptionPane;
 
-import javafx.css.PseudoClass;
-
 public class Salario {
     public static void main(String[] args) {
         double salario, horas, valHora, salud, pension, total;
