@@ -1,6 +1,4 @@
-
-package Ejercicios.Plan;
-    import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 public class Plan {
     public static void main(String[] args){
